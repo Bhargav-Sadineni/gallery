@@ -1,0 +1,197 @@
+/* -------------------------
+  General Styles
+------------------------- */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* -------------------------
+  Gallery Grid
+------------------------- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* -------------------------
+  Hover Effects
+------------------------- */
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover figcaption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------------
+  Lightbox Styles
+------------------------- */
+.lightbox {
+    display: none; /* hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.caption {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox .close:hover {
+    color: #ff4c4c;
+}
+
+.lightbox button.prev,
+.lightbox button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    font-size: 40px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.lightbox button.prev:hover,
+.lightbox button.next:hover {
+    background: rgba(255,255,255,0.5);
+}
+
+.lightbox button.prev {
+    left: 20px;
+}
+
+.lightbox button.next {
+    right: 20px;
+}
+
+/* -------------------------
+  Responsive tweaks
+------------------------- */
+@media (max-width: 600px) {
+    .gallery-item img {
+        height: 150px;
+    }
+
+    .caption {
+        font-size: 16px;
+    }
+
+    .lightbox button.prev,
+    .lightbox button.next {
+        font-size: 30px;
+        padding: 8px 12px;
+    }
+
+    .lightbox .close {
+        font-size: 35px;
+    }
+}
+/* -------------------------
+  Add Photos Button Styles
+------------------------- */
+#addPhotosBtn {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;   /* Green button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    display: block;
+}
+
+#addPhotosBtn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#addPhotosBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+

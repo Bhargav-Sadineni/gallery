@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="my responsive image gallery">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <main>
+    <h1>My Image Gallery</h1>
+    <button id="addPhotosBtn">Add Photos</button>
+    <input type="file" id="fileInput" multiple accept="image/*" style="display:none;">
+
+    <div class="gallery">
+
+    
+    <figure class="gallery-item" data-category="nature">
+      <img src="iceforest.jpg" alt="Beautiful ice Forest">
+      <figcaption>Beautiful Ice Forest</figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="architecture">
+      <img src="kitchen.jpg" alt="Modern Kitchen">
+      <figcaption>Modern Kitchen</figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="nature">
+      <img src="opensky.jpg" alt="Open Sky View">
+      <figcaption>Open Sky View</figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="animals">
+      <img src="cat.jpg" alt="Cute Cat">
+      <figcaption>Cute Cat</figcaption>
+    </figure>
+
+   
+    
+  </div>
+   <div id="lightbox" class="lightbox" aria-hidden="true">
+            <span class="close" aria-label="Close">&times;</span>
+            <img class="lightbox-img" src="" alt="">
+            <div class="caption"></div>
+            <button class="prev" aria-label="Previous">&#10094;</button>
+            <button class="next" aria-label="Next">&#10095;</button>
+    </div>
+  </main>
+  <script src="gallery.js"></script>
+</body>
+
+</html>
