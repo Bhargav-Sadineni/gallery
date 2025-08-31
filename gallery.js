@@ -1,6 +1,4 @@
-// -------------------------
-// Select elements
-// -------------------------
+
 const galleryItems = document.querySelectorAll('.gallery-item');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.querySelector('.lightbox-img');
@@ -11,9 +9,7 @@ const nextBtn = document.querySelector('.next');
 
 let currentIndex = 0;
 
-// -------------------------
-// Open Lightbox
-// -------------------------
+
 galleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
         currentIndex = index;
@@ -33,25 +29,21 @@ function openLightbox() {
     lightbox.style.display = 'flex';
 }
 
-// -------------------------
-// Close Lightbox
-// -------------------------
+
 function closeLightbox() {
     lightbox.style.display = 'none';
 }
 
 closeBtn.addEventListener('click', closeLightbox);
 
-// Close when clicking outside image
+
 lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
         closeLightbox();
     }
 });
 
-// -------------------------
-// Navigate Prev/Next
-// -------------------------
+
 prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
     openLightbox();
@@ -62,9 +54,7 @@ nextBtn.addEventListener('click', () => {
     openLightbox();
 });
 
-// -------------------------
-// Keyboard Navigation
-// -------------------------
+
 document.addEventListener('keydown', (e) => {
     if (lightbox.style.display === 'flex') {
         if (e.key === 'ArrowLeft') {
@@ -126,4 +116,5 @@ fileInput.addEventListener('change', (event) => {
     // Reset input
     fileInput.value = '';
 });
+
 
